@@ -22,4 +22,5 @@ const Enquete = sequelize.define("enquete",{
     }
 })
 
+
 module.exports = Enquete;

@@ -61,13 +61,13 @@ try{
     
     await database.query("commit")
 
+    await Enquete.destroy({where:{id:1},cascade:true})
     console.log(enquetes, options, votos)
 
 }
 catch(err){
     console.log(err)
 }
-    // await novaEnquete.destroy()
     // await novaOption1.destroy()
     // await novaOption2.destroy()
     // await novaOption3.destroy()
