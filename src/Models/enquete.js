@@ -1,15 +1,15 @@
 const Sequelize  = require("sequelize")
-const sequelize = require("./connector")
+const sequelize = require("../Controllers/connector")
 
 const Enquete = sequelize.define("enquete",{
     id:{
         type:Sequelize.INTEGER(10),
         autoIncrement:true,
         primaryKey:true,
-        allowNull:false
+        onDelete:"CASCADE"
     },
     titulo:{
-        type:Sequelize.STRING(30),
+        type:Sequelize.STRING(100),
         allowNull:false
     },
     dataInicio:{
