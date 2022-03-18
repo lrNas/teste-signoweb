@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize")
 const sequelize = require("../Controllers/connector")
 
-const Voto = sequelize.define("voto",{
+const Voto = sequelize.define("votos",{
     id:{
         type:Sequelize.INTEGER(10),
         autoIncrement:true,

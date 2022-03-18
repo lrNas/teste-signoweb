@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const crud = require("./src/Controllers/crud")
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -10,7 +11,12 @@ app.use((req, res, next) => {
 });
 
 
-app.get("/", (req, res) => {
+app.get("/enquetes", (req, res) => {
+    crud("enquete",   
+    {},
+    "request").then(data=>res.send(data)
+)
+
     
  
 });

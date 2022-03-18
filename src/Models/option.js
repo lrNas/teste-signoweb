@@ -2,7 +2,7 @@ const Sequelize = require("sequelize")
 const sequelize = require("../Controllers/connector");
 const Voto = require("./voto");
 
-const Option = sequelize.define("option",{
+const Option = sequelize.define("options",{
     id:{
         type:Sequelize.INTEGER(10),
         autoIncrement:true,

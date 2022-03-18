@@ -3,7 +3,7 @@ const sequelize = require("../Controllers/connector")
 const Voto = require("./voto");
 const Option = require("./option");
 
-const Enquete = sequelize.define("enquete",{
+const Enquete = sequelize.define("enquetes",{
     id:{
         type:Sequelize.INTEGER(10),
         autoIncrement:true,
