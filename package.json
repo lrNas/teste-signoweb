@@ -1,0 +1,25 @@
+{
+  "name": "teste-signoweb",
+  "version": "1.0.0",
+  "description": "Teste para vaga de emprego na SignoWeb",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon node .",
+    "start": "node ."
+  },
+  "keywords": [
+    "javascript",
+    "php",
+    "nodejs"
+  ],
+  "author": "Lucas Rodrigues do Nascimento",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
