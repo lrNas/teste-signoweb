@@ -1,5 +1,7 @@
 const Sequelize  = require("sequelize")
 const sequelize = require("../Controllers/connector")
+const Voto = require("./voto");
+const Option = require("./option");
 
 const Enquete = sequelize.define("enquete",{
     id:{
@@ -21,6 +23,22 @@ const Enquete = sequelize.define("enquete",{
         allowNull:false
     }
 })
+
+Enquete.hasMany(Option,{
+    as:"Option",
+    onDelete:"cascade",
+    sourceKey:"id",
+    foreignKey:"idEnquete",
+})
+
+Enquete.hasMany(Voto,{
+    as:"Voto",
+    onDelete:"cascade",
+    sourceKey:"id",
+    foreignKey:"idEnquete"
+})
+
+
 
 
 module.exports = Enquete;

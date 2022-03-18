@@ -24,7 +24,7 @@ try{
     const novaOption1 = await Option.create(
         {
             description:"Sim",
-            idEnquete:1
+            idEnquete:2
         }
     )
 
@@ -32,7 +32,7 @@ try{
     const novaOption2 = await Option.create(
         {
             description:"Não",
-            idEnquete:1
+            idEnquete:2
         }
     )
 
@@ -40,7 +40,7 @@ try{
     const novaOption3 = await Option.create(
         {
             description:"Talvez",
-            idEnquete:1
+            idEnquete:2
         }
     )
 
@@ -48,7 +48,7 @@ try{
     const novoVoto = await Voto.create(
         {
             idOption:1,
-            idEnquete:1
+            idEnquete:2
         }
     )
     
