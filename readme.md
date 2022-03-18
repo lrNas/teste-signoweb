@@ -3,13 +3,15 @@ Avaliação de competência: Trainee Desenvolvedor
 Esse teste avalia seus conhecimentos.
 REQUISITOS
 - Desenvolvimento deve ser feito em Laravel 8 ou NodeJS, conforme combinado.
-- Banco de dados MYSQL
+- Banco de dados MYSQL OK
 - Linguagem de programação PHP OO
+
+
 TESTE
 SISTEMA DE VOTAÇÃO
 
 Criar um back (crud completo de criação/edição/exclusão) com gerenciamento de enquete e
-opções.
+opções. ok
 - A enquete deve ter um título e uma data programada para início e para término.
 - O cadastro de opções de respostas da enquete devem ser dinâmicas, é obrigatório
 mínimo 3 opções.

@@ -42,7 +42,7 @@ const crud = async(model,values,action) =>{
                         resolve(requested = await Model.findAll(values))
                         break;
                     }
-                            
+                    
                 }
                 catch(err)
                 {

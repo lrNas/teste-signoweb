@@ -1,0 +1,31 @@
+####
+
+PUT http://localhost:3030/enquete
+Content-Type: application/json
+
+{   
+    "id":10,
+    "titulo":"Update!",
+    "dataInicio":"2022-01-20T17:20:00.000Z",
+    "dataFim":"2022-10-20T17:20:00.000Z"
+}
+
+####
+
+POST http://localhost:3030/enquete
+Content-Type: application/json
+
+{   
+    "titulo":"Está sendo divertido fazer esse trabalho?",
+    "dataInicio":"2022-01-20T17:20:00.000Z",
+    "dataFim":"2022-10-20T17:20:00.000Z"
+}
+
+####
+
+GET http://localhost:3030/enquete/12
+Content-Type: application/json
+
+{   
+    "id":12
+}
