@@ -1,12 +1,16 @@
 const express = require("express");
 const app = express();
-const crud = require("./src/Controllers/crud")
 const enquete = require( "./src/Routes/enquete")
 const option = require( "./src/Routes/option")
 const voto = require( "./src/Routes/voto")
-const php = require('php')
-
 app.use(express.json());
+
+// const php = require('php')
+// const path = require('path')
+// app.set("views", path.join(__dirname,"/src/Views"))
+// app.set("view engine", php)
+// app.engine('php',php.__express)
+
 app.use((req, res, next) => {
     res.append('Access-Control-Allow-Origin', ['*']);
     res.append('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE');
@@ -17,6 +21,13 @@ app.use((req, res, next) => {
 app.use(enquete);
 app.use(option);
 app.use(voto);
+
+
+
+// app.get("/",(req,res)=>{
+//     res.render("teste.php", {var1:"teste",var2:"teste2"})
+// }
+// )
 
 app.listen(3030, () => {
     console.log("Server em execução!");

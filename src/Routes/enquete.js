@@ -89,22 +89,22 @@ router.put("/enquete", (req, res) => {
     });
 
     router.get("/enquete/:id", (req, res) => {
-        crud("enquete",   
-            {
-                where: {
-                    id: req.params.id
-                }
-            },
-            "request"
-        )
-        .then(data=>res.status(200).json(data)
-        )
-        .catch(err=>
-            {
-                res.status(400).json(err)
-            })
-    });
-    
+    crud("enquete",   
+        {
+            where: {
+                id: req.params.id
+            }
+        },
+        "request"
+    )
+    .then(data=>res.status(200).json(data)
+    )
+    .catch(err=>
+        {
+            res.status(400).json(err)
+        })
+});
+
 
 
 module.exports = router
