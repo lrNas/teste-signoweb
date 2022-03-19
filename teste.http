@@ -1,17 +1,5 @@
 ####
 
-PUT http://localhost:3030/enquete
-Content-Type: application/json
-
-{   
-    "id":10,
-    "titulo":"Update!",
-    "dataInicio":"2022-01-20T17:20:00.000Z",
-    "dataFim":"2022-10-20T17:20:00.000Z"
-}
-
-####
-
 POST http://localhost:3030/enquete
 Content-Type: application/json
 
@@ -23,9 +11,120 @@ Content-Type: application/json
 
 ####
 
-GET http://localhost:3030/enquete/12
+GET http://localhost:3030/enquete/2
+
+####
+
+GET http://localhost:3030/enquete/
+
+####
+
+PUT http://localhost:3030/enquete
 Content-Type: application/json
 
 {   
-    "id":12
+    "id":1,
+    "titulo":"Update!",
+    "dataInicio":"2022-01-20T17:20:00.000Z",
+    "dataFim":"2022-10-20T17:20:00.000Z"
+}
+
+
+##########
+DELETE http://localhost:3030/enquete
+Content-Type: application/json
+
+{   
+    "idEnquete":1
+}
+####
+##Fim testes Enquete
+###
+
+POST http://localhost:3030/option
+Content-Type: application/json
+
+{   
+    "idEnquete":2,
+    "description":"Eita!"
+}
+
+####
+
+GET http://localhost:3030/option/
+
+
+####
+
+GET http://localhost:3030/option/2
+
+####
+
+GET http://localhost:3030/option/enq/2
+
+####
+
+PUT http://localhost:3030/option
+Content-Type: application/json
+
+{   
+    "idOption":2,
+    "description":"Claro!!",
+    "idEnquete":2
+}
+
+#######
+
+DELETE http://localhost:3030/option
+Content-Type: application/json
+
+{   
+    "idOption":3
+}
+
+#########
+###Fim Option
+####
+
+POST http://localhost:3030/voto
+Content-Type: application/json
+
+{   
+    "idEnquete":3,
+    "idOption":2
+}
+
+
+###############
+GET http://localhost:3030/voto
+
+###############
+GET http://localhost:3030/voto/4
+
+###############
+GET http://localhost:3030/voto/enq/3
+
+
+###############
+GET http://localhost:3030/voto/opt/2
+
+################
+
+
+PUT http://localhost:3030/voto
+Content-Type: application/json
+
+{   
+    "idVoto":4,
+    "idEnquete":3,
+    "idOption":5
+}
+
+#######
+
+DELETE http://localhost:3030/voto
+Content-Type: application/json
+
+{   
+    "idVoto":5
 }

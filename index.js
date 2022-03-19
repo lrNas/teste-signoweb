@@ -1,6 +1,10 @@
 const express = require("express");
 const app = express();
 const crud = require("./src/Controllers/crud")
+const enquete = require( "./src/routes/enquete")
+const option = require( "./src/routes/option")
+const voto = require( "./src/routes/voto")
+const php = require('php')
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -10,74 +14,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get("/enquete/:id", (req, res) => {
-    crud("enquete",   
-        {
-            where: {
-                id: req.params.id
-            }
-        },
-        "request"
-    )
-    .then(data=>res.status(200).json(data)
-    )
-    .catch(err=>
-        {
-            res.status(400).json(err)
-        })
-});
-
-app.get("/enquetes", (req, res) => {
-    crud("enquete",   
-        {},
-        "request"
-    )
-    .then(data=>res.status(200).json(data)
-    )
-    .catch(err=>
-        {
-            res.status(400).json(err)
-        })
-});
-
-app.post("/enquete", (req, res) => {
-    crud("enquete",   
-        {
-            titulo:req.body.titulo,
-            dataInicio:req.body.dataInicio,
-            dataFim:req.body.dataFim
-        },
-        "create"
-    )
-    .then(data=>res.status(200).json(data)
-    )
-    .catch(err=>
-    {
-        res.status(400).json(err)
-    })
-});
-
-app.put("/enquete", (req, res) => {
-        
-        crud("enquete",   
-        [
-            {
-                titulo: req.body.titulo,
-                dataInicio:req.body.dataInicio,
-                dataFim:req.body.dataFim
-            },
-            {where: { id: req.body.id }}
-        ],
-        "update"
-        )
-        .then(data=>res.status(200).json(data)
-    )
-    .catch(err=>
-        {
-            res.status(400).json(err)
-        })
-    });
-
+app.use(enquete);
+app.use(option);
+app.use(voto);
 
 app.listen(3030, () => {
     console.log("Server em execução!");
