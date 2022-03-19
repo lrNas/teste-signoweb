@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const crud = require("./src/Controllers/crud")
-const enquete = require( "./src/routes/enquete")
-const option = require( "./src/routes/option")
-const voto = require( "./src/routes/voto")
+const enquete = require( "./src/Routes/enquete")
+const option = require( "./src/Routes/option")
+const voto = require( "./src/Routes/voto")
 const php = require('php')
 
 app.use(express.json());
