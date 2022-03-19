@@ -2,6 +2,55 @@ const express = require('express')
 const router = express.Router()
 const crud = require("../Controllers/crud")
 
+router.get("/voto/count", (req, res) => {
+       
+    crud("voto",
+        {},
+    "count"
+    )
+    .then(data=>res.status(200).json(data)
+)
+.catch(err=>
+    {
+        res.status(400).json(err)
+    })
+});
+router.get("/voto/count/:id", (req, res) => {
+        
+    crud("voto",   
+
+        {where:{idOption:req.params.id}}
+        ,
+    "count"
+    )
+    .then(data=>res.status(200).json(data)
+)
+.catch(err=>
+    {
+        res.status(400).json(err)
+    })
+});
+
+
+router.get("/voto/count/enq/:id", (req, res) => {
+        
+    crud("voto",   
+
+        {where:{idEnquete:req.params.id}}
+        ,
+    "count"
+    )
+    .then(data=>res.status(200).json(data)
+)
+.catch(err=>
+    {
+        res.status(400).json(err)
+    })
+});
+
+
+
+
 router.get("/voto/:id", (req, res) => {
     crud("voto",   
         {

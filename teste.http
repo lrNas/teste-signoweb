@@ -37,6 +37,11 @@ Content-Type: application/json
 {   
     "idEnquete":1
 }
+
+###############
+
+GET http://localhost:3030/enquete/count
+
 ####
 ##Fim testes Enquete
 ###
@@ -53,8 +58,17 @@ Content-Type: application/json
 
 GET http://localhost:3030/option/
 
+###############
+
+GET http://localhost:3030/option/count
 
 ####
+
+
+
+GET http://localhost:3030/option/count/2
+
+###############
 
 GET http://localhost:3030/option/2
 
@@ -108,7 +122,25 @@ GET http://localhost:3030/voto/enq/3
 ###############
 GET http://localhost:3030/voto/opt/2
 
+
 ################
+
+
+GET http://localhost:3030/voto/count
+
+###############
+
+GET http://localhost:3030/voto/count/5
+
+####
+
+GET http://localhost:3030/voto/count/enq/2
+
+####
+
+
+
+
 
 
 PUT http://localhost:3030/voto

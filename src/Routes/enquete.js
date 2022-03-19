@@ -2,22 +2,6 @@ const express = require('express')
 const router = express.Router()
 const crud = require("../Controllers/crud")
 
-router.get("/enquete/:id", (req, res) => {
-    crud("enquete",   
-        {
-            where: {
-                id: req.params.id
-            }
-        },
-        "request"
-    )
-    .then(data=>res.status(200).json(data)
-    )
-    .catch(err=>
-        {
-            res.status(400).json(err)
-        })
-});
 
 router.get("/enquete", (req, res) => {
     crud("enquete",   
@@ -87,6 +71,40 @@ router.put("/enquete", (req, res) => {
             res.status(400).json(err)
         })
     });
+
+    router.get("/enquete/count", (req, res) => {
+        
+        crud("enquete",   
+
+            {}
+            ,
+        "count"
+        )
+        .then(data=>res.status(200).json(data)
+    )
+    .catch(err=>
+        {
+            res.status(400).json(err)
+        })
+    });
+
+    router.get("/enquete/:id", (req, res) => {
+        crud("enquete",   
+            {
+                where: {
+                    id: req.params.id
+                }
+            },
+            "request"
+        )
+        .then(data=>res.status(200).json(data)
+        )
+        .catch(err=>
+            {
+                res.status(400).json(err)
+            })
+    });
+    
 
 
 module.exports = router

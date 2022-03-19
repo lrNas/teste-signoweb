@@ -41,6 +41,10 @@ const crud = async(model,values,action) =>{
                     case "request":
                         resolve(requested = await Model.findAll(values))
                         break;
+                    case "count":
+                        resolve(requested = await Model.count(values))
+                        break;
+
                     }
                     
                 }

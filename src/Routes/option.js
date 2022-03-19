@@ -2,6 +2,38 @@ const express = require('express')
 const router = express.Router()
 const crud = require("../Controllers/crud")
 
+router.get("/option/count", (req, res) => {
+        
+    crud("option",
+        {},
+    "count"
+    )
+    .then(data=>res.status(200).json(data)
+)
+
+.catch(err=>
+    {
+        res.status(400).json(err)
+    })
+});
+
+
+router.get("/option/count/:id", (req, res) => {
+        
+    crud("option",   
+
+        {where:{idEnquete:req.params.id}}
+        ,
+    "count"
+    )
+    .then(data=>res.status(200).json(data)
+)
+.catch(err=>
+    {
+        res.status(400).json(err)
+    })
+});
+
 router.get("/option/enq/:id", (req, res) => {
     crud("option",   
         {
