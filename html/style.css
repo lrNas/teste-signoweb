@@ -1,0 +1,290 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100vw;
+    height: 100vh;
+    background-color: #C4C4C4;
+    margin:0
+}
+.container{
+    background-color: white ;
+    border-radius: 1vmax;
+    margin-top: 2vmax;
+    border: 1vmax solid #003E42;
+    padding: 2vmax;
+    width: 80%;
+    height: 80%;
+    align-self: center;
+    overflow: hidden;
+}
+
+hr {
+    height: 1vmin;
+    width: 100%;
+    border: 0;
+    border-top: 0.3vmax solid #003E42;;
+    margin: 0 0;
+    padding: 0;
+}
+
+.hul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+}
+
+.hul li{
+    font-size: 1.4vmax;
+}
+main{
+    padding: 1.7vmax;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 2vmax;
+}
+
+.enq-prev{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 0.4vmax;
+}
+.futuro{
+    background-color: #5DCB89;
+
+}
+.encerrado{
+    background-color: #C4C4C4;
+
+}
+.atual{
+    background-color: #77D8DE;
+
+}
+.enq-prev{
+    margin: 2vmin;
+    width: 30%;
+    text-align: right;
+}
+
+.prev-votos{
+    font-size: 1vmax;
+    margin-right: 1vmax;
+}
+.prev-titulo{
+    font-size: 1.2vmax;
+    text-align: left;
+    margin:1vmax;
+    font-weight: 600;
+}
+
+.popup{
+    position: fixed;
+    place-self:  center;
+    background-color: #77D8DE;
+    border: 2px solid hsl(183, 54%, 55%);
+    border-radius: 1vmin;
+    height: 80%;
+    width: 40%;
+    display: block;
+    bottom: 10%;
+    right: 30%;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+.popco{
+    justify-content: space-evenly;
+}
+.innerdiv{
+        background-color: white;
+        border-radius: 1vmin;
+        height: 79%;
+        overflow: hidden;
+    overflow-y: scroll;
+}
+
+.container2{
+    background-color: white ;
+    width: 100%;
+    height: 100%;
+    align-self: center;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-color: #003E42;
+}
+
+.circulo {
+    position: relative;
+    height: 4vmax;
+    width: 4vmax;
+    left: 85vmax;
+    bottom:5vmax;
+    background-color: #5DCB89;
+    border-radius: 50%;
+    display: inline-block;
+    border-color: #4FC3CA;
+    border-width: 1vmax;
+  }
+  .circulo2 {
+    position: relative;
+    height: 2vmax;
+    width: 2vmax;
+    bottom: 1.3vmax;
+    left: -0.3vmax;
+    padding: 0.5vmin;
+    background-color: #5DCB89;
+    border-radius: 50%;
+    display: inline-block;
+    border-color: #4FC3CA;
+    border-width: 1vmax;
+  }
+.red{
+    background-color: #C05151;
+}
+
+.search {
+    border-radius: 3px;
+    width: 15vmax;
+    height: 2vmax;
+    font-size: 1.3vmax;
+    border-width: 0.3vmin;
+    box-shadow: inset;
+}
+
+.idpesquisa{
+    margin-right: 7vmax;
+    font-size: 2vmax;
+}
+.titlebox{
+    display: flex;
+    flex-direction: column;
+}
+.votos{
+    font-size: 1vmax;
+    align-self: flex-end;
+    margin:0 2vmax;
+    padding: 0.2vmax;
+}
+.options{
+    padding: 0;
+}
+.options li{
+    font-size: 1.2vmax;
+    display: flex;
+    justify-content: space-around;
+}
+.selection{
+    background-color: #77D8DE;
+    border-radius: 1vmin;
+    margin-bottom: 1vmin;
+    padding: 1vmin;
+}
+.options button{
+    align-self: center;
+    font-size: 1.2vmax;
+    width: 4.5vmax;
+    height: 2vmax;
+    /*flex*/
+    display: flex;
+    margin-left: -4.2vmax;
+}
+.addoption{
+    display: none;
+}
+
+.hdiv{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.infos h3{
+    font-size: 1.2vmax;
+    margin: 0;
+    padding: 0;
+}
+.infos,
+.infos p{
+    margin: 0;
+    padding: 0;
+}
+.infos li{
+    display: flex;
+    flex-direction: column;
+}
+.titulo{
+    padding: 0.9vmax;
+    font-size: 1.4vmax;
+    align-self: flex-start;
+}
+.vdiv1{
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    font-size: 1.2vmax;
+    border-radius: 1vmin;
+}
+textarea{
+    resize: none;
+    width: 80%;
+    align-self: center;
+    height:10%;
+    padding: 0;
+    margin: 0;
+}
+.grow { 
+    transition: all .2s ease-in-out; 
+    }
+    
+    .grow:hover { 
+    transform: scale(1.1); 
+    }
+
+    .optionsinput{
+        border-radius: 3px;
+        width: 15vmax;
+        height: 2vmax;
+        font-size: 1.3vmax;
+        border-width: 0.3vmin;
+        box-shadow: inset;
+    }
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+::-webkit-scrollbar-thumb:active { 
+    background-color: #003E42;
+}
+.blocker{
+    display: absolute;
+    background-color: #c4c4c44b;
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}  
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=date] {
+    font-size: 1.2vmax;
+    width: 10vmax;
+    height: 2.5vmax;
+    margin: 0;
+    padding: 0;
+
+  }
