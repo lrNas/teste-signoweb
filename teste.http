@@ -23,10 +23,10 @@ PUT http://localhost:3030/enquete
 Content-Type: application/json
 
 {   
-    "id":1,
+    "idEnquete":4,
     "titulo":"Update!",
-    "dataInicio":"2022-01-20T17:20:00.000Z",
-    "dataFim":"2022-10-20T17:20:00.000Z"
+    "dataInicio":"2020-01-20T17:20:00.000Z",
+    "dataFim":"2020-01-30T17:20:00.000Z"
 }
 
 
@@ -83,8 +83,7 @@ Content-Type: application/json
 
 {   
     "idOption":2,
-    "description":"Claro!!",
-    "idEnquete":2
+    "description":"Eita!!"
 }
 
 #######

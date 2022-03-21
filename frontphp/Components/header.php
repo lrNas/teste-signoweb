@@ -1,14 +1,14 @@
 <ul class="hul">
-                <li>
+                <li onclick="filtrar('todas')">
                     Todas as enquetes
                 </li>
-                <li>
+                <li onclick="filtrar('encerradas')">
                     Encerradas
                 </li>
-                <li>
+                <li onclick='filtrar("atuais");'>
                     Em andamento
                 </li>
-                <li>
+                <li onclick="filtrar('futuras')">
                     Futuras
                 </li>
                 <li>

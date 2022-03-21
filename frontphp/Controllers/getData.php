@@ -1,14 +1,42 @@
-<?php function getData($url){
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        return json_decode(curl_exec($ch));
+<?php 
+
+function callAPI($method, $url, $data){
+    $curl = curl_init();
+    switch ($method){
+       case "POST":
+          curl_setopt($curl, CURLOPT_POST, 1);
+          if ($data)
+             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+          break;
+       case "PUT":
+          curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "PUT");
+          if ($data)
+             curl_setopt($curl, CURLOPT_POSTFIELDS, $data);			 					
+          break;
+       default:
+          if ($data)
+             $url = sprintf("%s?%s", $url, http_build_query($data));
     }
 
-    function postData($url,$body){
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-        curl_setopt($ch, CURLOPT_POST, TRUE);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-        return json_decode(curl_exec($ch));
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+       'APIKEY: 111111111111111111111',
+       'Content-Type: application/json',
+    ));
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+
+    $result = curl_exec($curl);
+    if(!$result){return 0;}
+    curl_close($curl);
+    return $result;
+ }
+
+
+/**Refatorar isso! */
+function getData($url){
+    $response =callAPI('GET',$url,false);
+        return json_decode($response);
     }
+
 ?>

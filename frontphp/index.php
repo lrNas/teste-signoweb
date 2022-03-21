@@ -5,19 +5,20 @@
         <?php include "Components/head.php";
                 include "Controllers/cookiestarter.php";
                 if($popup == "true"){
-                    $addvisible="display:none";}
+                    $addvisible="display:none";
+                }
                 include "Controllers/getData.php";
                 include "Components/dateSorter.php";
-        ?>
+                ?>
     </head>
     <body>
+        <?php include "Src/scripts.php"?>
     <div class="container header">
             <?php include "Components/header.php"?>
             <hr>
             <?php include "Controllers/popup.php"?>
     </div>
     <div class="container2">
-        <?php include "Src/scripts.php"?>
         <main>
                 <?php 
                     $enquetes = getData("http://localhost:3030/enquete");
@@ -33,15 +34,11 @@
                         };
                         
                         $status = dateSorter($enquete->dataInicio,$enquete->dataFim);
+                        if($status==$filtro||$filtro=="todos"||$filtro==null){
 
-                        if($dataInicio>$agora){
-                            $status = "futuro";
+                            include "./Components/enqpreview.php";
                         }
-                        if($dataFim<$agora){
-                            $status = "encerrado";
-                        }
-                        include "./Components/enqpreview.php";
-                        $conter++;
+                            $conter++;
                     };
                 ?> 
          </main>

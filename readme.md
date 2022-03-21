@@ -13,6 +13,7 @@ Utilizado PHP 8 sem nenhum framework, Javascript e CSS. Ainda inacabado. Na past
 Na minha opinião, terminar esse trabalho da melhor forma que eu sei fazer de 72h, sem contar a configuração de ambiente de desenvolvimento do PHP, e mesmo incompleto ele já deve servir como teste de competências. Gostei bastante da idéia da ferramenta. Vou continuar desenvolvendo nesse projeto de qualquer forma mesmo após o teste, pra treinar minhas habilidades.
 
 Comparando à meu ultimo API que fiz para um teste, a qualidade desse está abaixo do que eu gostaria de entregar. Assim que puder divulgá-lo (se puder), o colocarei aqui.
+
 ### A fazer:
 -Criar o método de carregamento de informações de enquete para atualizar no front
 -Criar um botão de excluir
@@ -21,3 +22,11 @@ Comparando à meu ultimo API que fiz para um teste, a qualidade desse está abai
 -Utilizar um método de comunicação mais eficiente e seguro que cookies.
 -Padronizar retornos da api.
 -Tratar erros de inserção e validar entradas.
+
+Validadores pendentes e melhorias: 
+-Criar ou alterar somente enquetes presentes ou futuras
+-Não permitir data de inicio maior que data do fim
+-Excluir votos ao alterar enquete?
+-Evitar injections nos campos de texto
+-Adicionar maxlenght a todos os inputs
+

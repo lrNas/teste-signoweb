@@ -1,55 +1,112 @@
 <script>
-            function openpopup (id,op){
-                /**createenquete */
-                document.cookie ="popup=true";
-                document.cookie = `operation=createenquete`;
-                document.cookie =`errorprompt=`;
+    function openpopup (id,op){
+        /**createenquete */
+        document.cookie ="popup=true";
+        document.cookie = `operation=createenquete`;
+        document.cookie =`errorprompt=`;
 
-                if(op=="readenquete"){
-                    document.cookie = `operation=readenquete`;
+        if(op=="readenquete"){
+            document.cookie = `operation=readenquete`;
+            document.cookie =`idenquete=`+id;
+        }
+        document.location.reload();
+    }
+    function popupclose(){
+        document.cookie ="popup=false";
+        document.cookie = "operation=close";
+        document.cookie =`idenquete=0`;
+        document.cookie =`errorprompt=`;
 
-                    document.cookie =`idenquete=${id}`;
-                }
-                document.location.reload();
-            }
-            function popupclose(){
-                document.cookie ="popup=false";
-                document.cookie = "operation=close";
-                document.cookie =`idenquete=0`;
-                document.cookie =`errorprompt=`;
+        document.location.reload();
+    }
 
-                document.location.reload();
-            }
+    function insert(item){
+        let options = document.getElementsByClassName("optionsinput");
+        let optionsValues = []
+        let validator=true;
 
-
-
-
-            function insert(item){
-                let options = document.getElementsByClassName("optionsinput");
-                console.log(options.length)
-                let optionsValues = []
-
-                for(option of options){
-                    if(option.value==""){
-                        document.cookie =`errorprompt=São necessárias ao menos 3 opções para a enquete.`;
-                        break;
-                    }
-                
-                        optionsValues.push(option.value);
-                    }
-                    let titulo= document.getElementById("tituloenquete");
-                    if(titulo.value.length<5||isNaN(option.value)){
-                    document.cookie =`errorprompt=Não serão aceitos títulos de menos de 5 letras.`;
-                    }
-                    /**Aqui faz o post */
-                    document.cookie="operation=postenquete";
-                    document.cookie=`enquetetitle=${titulo.value}`;
-                    document.cookie="enquetestart=postenquete";
-                    document.cookie="enqueteend=postenquete";
-                    document.cookie="enqueteoptions=postenquete";
-                    
-                    document.location.reload();     
-                    }
-                
+        /**Realizar um prompt de erros e sucessos */
+        
+        let titulo = document.getElementById("tituloenquete").value.replace(/(\r\n|\n|\r)/gm, "");
+        console.log("TESTE - "+titulo);
+        
+        
+        
+        if(titulo.length<5){
+            document.cookie =`errorprompt=Não serão aceitos títulos de menos de 5 letras.`;
+            validator = false;
+        }
+        
+        if(validator==true){
+            document.cookie="enquetetitle="+titulo;
             
+        for(option of options){
+
+            if(option.value==""){
+                document.cookie =`errorprompt=São necessárias ao menos 3 opções para a enquete.`;
+                validator = false;
+                break;
+            }
+                optionsValues.push(option.value);
+            }
+
+        }
+
+
+        let dataInicial= document.getElementById("datainicial");
+        var inicial = new Date(dataInicial.value);
+
+        if(validator==true&&isNaN(inicial)){
+        document.cookie =`errorprompt=Data inicial não pode estar vazia.`;
+        validator = false;
+        }
+
+        let dataFinal= document.getElementById("datafim");
+        var final = new Date(dataFinal.value);
+        console.log(final)
+
+        if(validator==true&&isNaN(final)){
+
+        document.cookie =`errorprompt=Data final não pode estar vazia.`;
+        validator = false;
+        }
+
+
+        if(validator==true){
+            document.cookie="operation=postenquete";
+            document.cookie=`enquetestart=${dataInicial.value}`;
+            document.cookie=`enqueteend=${dataFinal.value}`;
+            document.cookie=`enqueteoptions=${JSON.stringify(optionsValues)}`;
+            document.cookie =`errorprompt=Data final não pode estar vazia.`;
+            document.cookie ="popup='false'";
+        }    
+        document.location.reload();
+    }
+                
+     
+     
+     function votar(id,idenq){
+        document.cookie="operation=postvoto";
+        document.cookie="idoption="+id;
+        document.cookie ="popup='false'";
+        document.location.reload();
+     }
+
+     function filtrar(filtro){
+         switch(filtro){
+             case "todas":
+                document.cookie =`filtro=todos`;
+                break;
+            case "atuais":
+                document.cookie =`filtro=atual`;
+                break;
+            case "encerradas":
+                document.cookie =`filtro=encerrado`;
+                break;
+            case "futuras":
+                document.cookie =`filtro=futuro`;
+                break;
+            }
+            document.location.reload();
+        }
 </script>
