@@ -41,6 +41,8 @@ hr {
 
 .hul li{
     font-size: 1.4vmax;
+    padding: 0vmax 2vmax;
+    border-radius: 1vmin;
 }
 main{
     padding: 1.7vmax;
@@ -69,6 +71,9 @@ main{
 .atual{
     background-color: #77D8DE;
 
+}
+.todos{
+    background-color: #ffa600;
 }
 .enq-prev{
     margin: 2vmin;
@@ -148,12 +153,33 @@ main{
     border-color: #4FC3CA;
     border-width: 1vmax;
   }
+  .searchbar{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .circulo3 {
+    position: relative;
+    height: 2.5vmax;
+    width: 2.5vmax;
+    top: -0.5vmin;
+    left: -2vmax;
+    padding: 0.5vmin;
+    background-color: #5DCB89;
+    border-radius: 50%;
+    display: inline-block;
+    border-color: #4FC3CA;
+    border-width: 1vmax;
+  }
+
 .red{
     background-color: #C05151;
 }
 
+
 .search {
     border-radius: 3px;
+    margin-left: 1vmax;
     width: 15vmax;
     height: 2vmax;
     font-size: 1.3vmax;

@@ -15,15 +15,14 @@ Na minha opinião, terminar esse trabalho da melhor forma que eu sei fazer de 72
 Comparando à meu ultimo API que fiz para um teste, a qualidade desse está abaixo do que eu gostaria de entregar. Assim que puder divulgá-lo (se puder), o colocarei aqui.
 
 ### A fazer:
--Criar o método de carregamento de informações de enquete para atualizar no front
+-Melhorar a apresentação da data
 -Criar um botão de excluir
--Colocar as abas para funcionar, filtrando
--Colocar o searchbar para funcionar abrindo o popup do id inserido
--Utilizar um método de comunicação mais eficiente e seguro que cookies.
+-Utilizar um método de comunicação mais eficiente e seguro que cookies, talvez sessions.
 -Padronizar retornos da api.
 -Tratar erros de inserção e validar entradas.
 
 Validadores pendentes e melhorias: 
+-Impedir searchbar de abrir ids inexistentes
 -Criar ou alterar somente enquetes presentes ou futuras
 -Não permitir data de inicio maior que data do fim
 -Excluir votos ao alterar enquete?

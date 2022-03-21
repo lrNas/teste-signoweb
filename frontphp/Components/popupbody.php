@@ -7,7 +7,10 @@ if($operation=="readenquete"){
     include 'popupbarget.php';
     $countervotos = "<p class='votos'>Votos: $windowvotos</p>";
 }
+
+
 if($operation=="createenquete"){
+    $popupbartitle = "Criar nova enquete";
     include 'popupbarcreate.php';
     $countervotos = "<p class='titulo'>
     Digite o texto da enquete abaixo:
@@ -17,6 +20,22 @@ if($operation=="createenquete"){
 </textarea>";
     
 }
+
+if($operation=="updateenquete"){
+    $popupbartitle = "Atualizar enquete id # $idEnquete ";
+    include 'popupbarcreate.php';
+    $windowtitulo ="";
+    $countervotos = "<p class='titulo'>
+    Digite o novo texto da enquete abaixo:
+    
+</p>
+<textarea id='tituloenquete' placeholder='$tituloextract'>
+
+</textarea>";
+    
+}
+
+
 
 echo"
     <div class='innerdiv'>
@@ -45,6 +64,11 @@ echo"
     }
     if($operation=="createenquete"){
         include 'popupoptioneditor.php';
+        
+    }
+    /**Unificar com o acima */
+    if($operation=="updateenquete"){
+        include 'popupoptionupdater.php';
         
     }
 echo"</div></div></div></div>";

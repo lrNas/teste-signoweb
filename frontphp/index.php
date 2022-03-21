@@ -3,16 +3,16 @@
     <head>
 
         <?php include "Components/head.php";
+                include "Controllers/getData.php";
                 include "Controllers/cookiestarter.php";
                 if($popup == "true"){
                     $addvisible="display:none";
                 }
-                include "Controllers/getData.php";
+                include "Src/scripts.php";
                 include "Components/dateSorter.php";
                 ?>
     </head>
     <body>
-        <?php include "Src/scripts.php"?>
     <div class="container header">
             <?php include "Components/header.php"?>
             <hr>

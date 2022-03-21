@@ -1,18 +1,12 @@
 <?php 
 $display = 'none';
 $optionsbody = '';
+include "./Components/cookiearray.php";
+
+
 if($popup=="true"){
     $display="flex";
-    if($operation =="postvoto"){
-
-        $data = json_encode(array(
-            "idEnquete"=> $idEnquete,
-            "idOption"=> $idOption
-        ));
-        /** Tratar resposta abaixo */
-        $resposta = json_decode(callAPI('POST', 'http://localhost:3030/voto', $data));
-        setcookie("operation", "", time() - 3600);
-    }
+    /**Transformar em uma function */
     if($operation =="readenquete"){
         $windowid = $idEnquete;
         $windowenquete = getData("http://localhost:3030/enquete/$idEnquete");
@@ -33,6 +27,29 @@ if($popup=="true"){
             <p class='votos'>$optvotos votos</p>
             <button type='submit' id='submit$option->id' onclick='votar($option->id,$idEnquete)' class='grow'>Votar!</button>
         </li>";
+        }
+    }
+    
+    if($operation =="updateenquete"){
+        $windowid = $idEnquete;
+        $windowenquete = getData("http://localhost:3030/enquete/$idEnquete");
+        $tituloextract = $windowenquete[0]->titulo;
+        $windowtitulo = "<p class='titulo'>$tituloextract</p>";
+        $windowcreated = $windowenquete[0]->createdAt;
+        $windowupdated = $windowenquete[0]->updatedAt;
+        $windowinicial = $windowenquete[0]->dataInicio;
+        $windowfim = $windowenquete[0]->dataFim;
+        $windowoptions = getData("http://localhost:3030/option/enq/$idEnquete");
+        $windowvotos = getData("http://localhost:3030/voto/count/enq/$idEnquete");  
+    
+
+        foreach($windowoptions as $option){
+            $optvotos = getData("http://localhost:3030/voto/count/$option->id");
+            $optionsbody.="<li class='selection'>
+                <input id='option$i' key='$option->id' type='text' class='optionsinput' value='$option->description' required maxlength='30'>
+            </li>
+
+           ";
         }
     }
 
@@ -57,7 +74,6 @@ if($popup=="true"){
 else{
 
     if($operation =="postenquete"){
-        include "./Components/cookiearray.php";
 
         $arrayOpt = cookiearray($valuesoptions);
         
@@ -78,22 +94,44 @@ else{
             ));
             callAPI('POST', 'http://localhost:3030/option', $data);
         }
-        setcookie("operation", "", time() - 3600);
+        setcookie("operation", "",time()-3600);
     }
+    
 
-    if($operation =="postvoto"){
+    if($operation =="postupdate"){
 
-        $data = json_encode(array(
-            "idEnquete"=> $idEnquete,
-            "idOption"=> $idOption
-        ));
-        /** Tratar resposta abaixo */
-        $resposta = json_decode(callAPI('POST', 'http://localhost:3030/voto', $data));
+
+        echo"FEITO";
+        $datas = cookieobjarray($valuesoptions);
+        var_dump($datas);
         
-        setcookie("operation", "", time() - 3600);
+        foreach($datas as $data)
+        {
+            
+            $desc = $data["description"];
+            $opt =$data["idOption"];
+        
+            $input = json_encode(array(
+                "idOption"=>$opt,
+                "description"=> $desc)
+            );
+                /** Tratar resposta abaixo */
+        
+            $resposta = json_decode(callAPI('PUT', 'http://localhost:3030/option',$input));
+        }
+                $data = json_encode(array(
+                    "idEnquete"=>$idEnquete,
+                    "titulo"=> $enquetetitle,
+                    "dataInicio"=> $enquetestart,
+                    "dataFim"=> $enqueteend
+                    
+                ));
+                /** Tratar resposta abaixo */
+                $resposta = json_decode(callAPI('PUT', 'http://localhost:3030/enquete', $data));
+                setcookie("operation", "", time() - 3600);
 
     }
-}
+    }
 
 include "Components/popupbody.php";
 ?>
