@@ -1,16 +1,17 @@
-# Utilizado:#
-## Backend, para API rest:##
+# Utilizado: #
+## Backend, para API rest: ##
 NPM, Nodejs, Express, Sequelize, Mysql2 driver, Mysql server.
 Para rodar, instale todas as dependências necessárias e execute seu banco de dados. Se necessário, mude a senha do banco de dados em /src/Controllers/connector.js
+
 Nenhum comando SQL será necessário antes de rodar, já está sendo utilizado o Sequelize de ORM.
 
 Funcionando 100%. O arquivo de teste contém todas instruções que podem ser enviadas.
 Faz as funções de um crud + contagem.
 
 ## Frontend: ##
-Utilizado PHP 8 sem nenhum framework, Javascript e CSS. Ainda inacabado. Na pasta frontphp tem os arquivos que podem ser associados ao XAMPP ou qualquer outro stack da sua preferência. A idéia é fazer uma Single Page Application, conforme a imagem do protótipo.
+Utilizado PHP 8 sem nenhum framework, Javascript e CSS. Na pasta frontphp tem os arquivos que podem ser associados ao XAMPP ou qualquer outro stack da sua preferência.
 ### Considerações ###
-Na minha opinião, terminar esse trabalho da melhor forma que eu sei fazer de 72h, sem contar a configuração de ambiente de desenvolvimento do PHP, e mesmo incompleto ele já deve servir como teste de competências. Gostei bastante da idéia da ferramenta. Vou continuar desenvolvendo nesse projeto de qualquer forma mesmo após o teste, pra treinar minhas habilidades.
+Gostei bastante da idéia da ferramenta. Vou continuar desenvolvendo nesse projeto de qualquer forma mesmo após o teste, pra treinar minhas habilidades.
 
 Comparando à meu ultimo API que fiz para um teste, a qualidade desse está abaixo do que eu gostaria de entregar. Assim que puder divulgá-lo (se puder), o colocarei aqui.
 
