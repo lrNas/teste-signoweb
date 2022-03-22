@@ -16,17 +16,17 @@ Gostei bastante da idéia da ferramenta. Vou continuar desenvolvendo nesse proje
 Comparando à meu ultimo API que fiz para um teste, a qualidade desse está abaixo do que eu gostaria de entregar. Assim que puder divulgá-lo (se puder), o colocarei aqui.
 
 ### A fazer:
--Melhorar a apresentação da data
--Criar um botão de excluir
--Utilizar um método de comunicação mais eficiente e seguro que cookies, talvez sessions.
--Padronizar retornos da api.
--Tratar erros de inserção e validar entradas.
+> Melhorar a apresentação da data,
+> Criar um botão de excluir,
+> Utilizar um método de armazenar dados mais eficiente e seguro que cookies, talvez sessions,
+> Padronizar retornos da api,
+> Tratar erros de inserção e validar entradas.
 
 Validadores pendentes e melhorias: 
--Impedir searchbar de abrir ids inexistentes
--Criar ou alterar somente enquetes presentes ou futuras
--Não permitir data de inicio maior que data do fim
--Excluir votos ao alterar enquete?
--Evitar injections nos campos de texto
--Adicionar maxlenght a todos os inputs
+> Impedir searchbar de abrir ids inexistentes,
+> Criar ou alterar somente enquetes presentes ou futuras,
+> Não permitir data de inicio maior que data do fim,
+> Excluir votos ao alterar enquete,
+> Evitar injections nos campos de texto,
+> Adicionar maxlenght a todos os inputs;
 
